@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Dados</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+    <!-- Menu de Dificuldade -->
+    <div id="menuDificuldade">
+        <h2>ESCOLHA A DIFICULDADE</h2>
+        <button data-dificuldade=Facil onmouseover="playSound('sounds/Facil.mp3')">FÁCIL</button>
+        <button data-dificuldade=Normal onmouseover="playSound('sounds/Normal.mp3')">NORMAL</button>
+    </div>
+
+    
+    <div id="contenedor-jogo">
+
+        <div id="controlsContainer">
+            <div id="fontControls">
+                <i class="font-icon">Aa</i>
+                <label for="fontSizeSlider">TAMANHO DO JOGO:</label>
+                <input type="range" id="fontSizeSlider" min="0.8" max="1.4" step="0.1" value="1">
+                <span id="currentSize">100%</span>
+            </div>
+            <div id="audioControl">
+                <button id="toggleSound">🔊</button>
+            </div>
+        </div>
+
+        <!-- Pontuação -->
+        <div id="displayPontos">PONTOS: 0</div>
+
+        <!-- Vidas -->
+        <div id="vidas"></div>
+
+        <!-- Pergunta e Ajuda -->
+        <div id="perguntaContainer">
+            <h2 id="pergunta"></h2>
+            <div id="audioPergunta">
+                <button id="toggleSound1" onclick="ajudaAudio()">AJUDA 🔊</button>
+            </div>
+        </div>
+
+        <!-- Dados -->
+        <div id="contenedor-dados">
+            <!-- As imagens dos dados serão inseridas aqui pelo JavaScript -->
+        </div>
+
+        <!-- Opções -->
+        <div id="opcoes">
+            <!-- As opções serão geradas pelo JavaScript -->
+        </div>
+
+        <!-- Feedback -->
+        <div id="feedback"></div>
+
+        <!-- Progresso -->
+        <div id="progressoContainer">
+            <div id="barraProgresso"></div>
+            <span id="progressoTexto">0/5</span>
+        </div>
+    </div>
+
+    <!-- Jogo da Memória -->
+    <div id="jogoMemoria" style="display: none;">
+        <h1>JOGO DA MEMÓRIA</h1>
+        <div id="memoriaCartas">
+            <!-- As cartas serão geradas pelo JavaScript -->
+        </div>
+        <div id="progressoMemoriaContainer">
+            <div id="barraProgressoMemoria"></div>
+            <span id="progressoTextoMemoria">0/3</span>
+        </div>
+    </div>
+
+    <!-- Mensagem de Game Over -->
+    <div id="mensagemGameOver" style="display: none;">
+        <h1>Game Over</h1>
+        <p>Você perdeu todas as vidas! Clique para jogar novamente.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
